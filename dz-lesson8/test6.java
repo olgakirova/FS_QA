@@ -10,16 +10,22 @@ public static void main (String[] args) {
         int r = 0;
         boolean exist = false;
 
-        for (int i = 0; r <=k; i ++){
+        if (k < 1) {
+            System.out.println("incorrect k");
+            return;
+        }
+
+        for (int i = 1; r <= k; i++) {
             r += i;
-            if (r == k){
+            System.out.println("try " + r);
+            if (r == k) {
                 exist = true;
                 break;
             }
         }
 
         if (exist){
-            System.out.println("Yes");
+            System.out.println("Yes"); 
         }
         else {
             System.out.println("No");

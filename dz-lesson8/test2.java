@@ -28,16 +28,27 @@ public static void main(String[] args) {
             System.out.println("New try " + cnt);
 
             for (int i = 0; i < players; i++) {
-                System.out.println("Enter  variant for " + (i+1));
-                variant[i] = in.nextInt();
+            
+               
+                
+                do {
+                    System.out.println("Enter number 0...9 for player " + (i+1));
+                    variant[i] = in.nextInt();
+                    
+                } while(variant[i] < 0 || variant[i] > 9);
+            }
+            
+            
+            for (int i = 0; i < players; i++) {
+            
                 if (secret == variant[i]) {
-                    System.out.println("Winner is " + (i+1) + ", secret = " + secret );
+                    System.out.println("Winner is " + (i+1) + ", secret = " + secret);
                     winner = true;
                     break;
                 }
             }
-        }
-        while (winner == false);
+                        
+        } while (winner == false);
     }
 
 }

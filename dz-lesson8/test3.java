@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class test3  {
 
-
 public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         System.out.println("Enter matrix size: " );
@@ -13,7 +12,11 @@ public static void main(String[] args) {
         int[] [] matrix = new int[size] [size];
         for (int i = 0; i < size; i ++) {
             for (int j = 0; j < size; j ++) {
-                matrix[i][j] = (int) (Math.random() * 100);
+            
+                // random variant:
+                //matrix[i][j] = (int) (Math.random() * 100);
+                
+                matrix[i][j] = (i*10) + j;
                 System.out.printf("%02d ", matrix[i][j]);
             }
             System.out.println("");
@@ -22,7 +25,6 @@ public static void main(String[] args) {
 
         for (int i = 0; i < size; i ++) {
             for (int j = 0; j < size; j ++) {
-
                 if (j > i) {
                     matrix[j][i] = matrix[j][i] + matrix[i][j];
                     matrix[i][j] = matrix[j][i] - matrix[i][j];
@@ -34,5 +36,4 @@ public static void main(String[] args) {
             System.out.println("");
         }
 }
-
 }

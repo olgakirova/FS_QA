@@ -1,11 +1,9 @@
 
-
-
 public class test1 {
 
 public static void main (String[] args) {
-	for (int i = 99; i > 0; i = i-1) {
-		String s = "s";
+    for (int i = 99; i > 0; i = i-1) {
+        String s = "s";
         String p = "s";
 
         if (i == 1){
@@ -29,6 +27,5 @@ public static void main (String[] args) {
             "No more bottles of beer!\n" +
             "Go to the store and buy some more,\n" +
             "99 bottles of beer on the wall.\n");
-
 }
 }
