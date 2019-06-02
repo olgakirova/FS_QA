@@ -1,0 +1,47 @@
+
+
+plugins {
+    id 'java'
+    id 'maven-publish'
+}
+
+repositories {
+    mavenLocal()
+    maven {
+        url = 'http://repo.maven.apache.org/maven2'
+    }
+}
+
+task testSuite (type: Test) {
+    useJUnitPlatform() {}
+
+    filter {
+        //includeTestsMatching "ru.cft.JunitTest"
+        //includeTestsMatching "ru.cft.JunitTestOrder"
+        includeTestsMatching "ru.cft.*"
+    }
+}
+
+task testSuite2 (type: Test) {
+    useJUnitPlatform() {}
+
+    filter {
+        //includeTestsMatching "ru.cft.JunitTest"
+        //includeTestsMatching "ru.cft.JunitTestOrder"
+        includeTestsMatching "ru.cft.JUnitTestSimple"
+    }
+}
+
+
+
+group = 'ru.cft.focus'
+version = '1.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+dependencies {
+    def junitVersion = '5.4.2'
+
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-engine', version: junitVersion
+    testCompile group: 'org.junit.jupiter', name: 'junit-jupiter-params', version: junitVersion
+    testCompile group: 'org.assertj', name: 'assertj-core', version: '3.12.2'
+}
